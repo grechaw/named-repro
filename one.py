@@ -8,8 +8,9 @@ class MyClass:
     def msg(self, msg):
         return f"hi yo {msg}"
 
-ray.init(address="auto")
-x = MyClass.options(name="x", lifetime="detached").remote()
+if (__name__=="__main__"):
+    ray.init(address="auto")
+    x = MyClass.options(name="x", lifetime="detached").remote()
 
 
 
